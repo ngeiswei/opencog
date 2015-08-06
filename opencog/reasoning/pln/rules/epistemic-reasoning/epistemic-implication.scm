@@ -35,7 +35,7 @@
             (stv                          ; Strength
                 (*
                     (cog-stv-strength AB)
-                    sA*0.095)
+                    sA*0.95)
                 (+                        ; Confidence
                     (cog-stv-confidence AB)
                     cA))))
