@@ -1,7 +1,7 @@
 
 ; Implication rule for simple truth values
 ;
-; Given belief A and Implication A B , calculate strength of belief B
+; Given Implication A B , calculate strength of Implication belief A belief B
 ; -----------------------------------------------------------------------------
 
 (define pln-rule-epistemic-implication
@@ -9,13 +9,13 @@
         (VariableList
             (VariableNode "$A")
             (VariableNode "$B"))
-        (AndLink
+        (ImplicationLink
             (ImplicationLink
                 (VariableNode "$A")
                 (VariableNode "$B"))
             (VariableNode "$A"))
         (ExecutionOutputLink
-            (GroundedSchemaNode "scm: pln-formula-simple-modus-ponens")
+            (GroundedSchemaNode "scm: pln-formula-simple-epistemic-implication")
             (ListLink
                 (VariableNode "$B")
                 (ImplicationLink
@@ -23,13 +23,15 @@
                     (VariableNode "$B"))))))
 
 ; -----------------------------------------------------------------------------
-; Modus Ponens Formula
+; Epistemic Implication Formula
 ; This version has no side effects and simply returns a TruthValue
 ; -----------------------------------------------------------------------------
 
-(define (pln-formula-simple-modus-ponens-side-effect-free AB)
+(define (pln-formula-simple-epistemic-implication-side-effect-free AB)
     (let
-        ((sA (cog-stv-strength (gar AB)))
+        ((sA (cog-stv-strength (gar AB))
+         (sA
+        )
          (cA (cog-stv-confidence (gar AB))))
             (stv                          ; Strength
                 (*
