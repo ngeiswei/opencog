@@ -30,13 +30,12 @@
 (define (pln-formula-simple-epistemic-implication-side-effect-free AB)
     (let
         ((sA (cog-stv-strength (gar AB))
-         (sA
         )
          (cA (cog-stv-confidence (gar AB))))
             (stv                          ; Strength
                 (*
                     (cog-stv-strength AB)
-                    sA)
+                    sA*0.095)
                 (+                        ; Confidence
                     (cog-stv-confidence AB)
                     cA))))
