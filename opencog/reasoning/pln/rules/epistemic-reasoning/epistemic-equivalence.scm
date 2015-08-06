@@ -27,7 +27,7 @@
 ; This version has no side effects and simply returns a TruthValue
 ; -----------------------------------------------------------------------------
 
-(define (pln-formula-simple-epistemic-implication-side-effect-free AB)
+(define (pln-formula-simple-epistemic-equivalence-side-effect-free AB)
     (let
         ((sA (cog-stv-strength (gar AB))
         )
