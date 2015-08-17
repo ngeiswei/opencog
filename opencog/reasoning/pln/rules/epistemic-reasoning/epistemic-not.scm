@@ -20,4 +20,4 @@
       ((sA (cog-stv-strength A))
        (cA (cog-stv-confidence A))
        
-       (stv ( 1-sA 0) (cA*0.95))))
+       (stv ( 1-sA ) (cA*0.95))))
