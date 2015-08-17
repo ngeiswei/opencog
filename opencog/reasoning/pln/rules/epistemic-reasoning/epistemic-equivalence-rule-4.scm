@@ -1,5 +1,5 @@
 
-; Implication rule for simple truth values
+; Equivalence rule for simple truth values
 ;
 ; Given Implication A B , calculate strength of Equivalence belief A belief B
 ; -----------------------------------------------------------------------------
