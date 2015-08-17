@@ -20,4 +20,4 @@
   (let 
       ((sA (cog-stv-strength A))
           (cA (cog-stv-confidence A))
-    (stv ( 1) (cA))))
+    (stv ( 0.95) (cA))))
