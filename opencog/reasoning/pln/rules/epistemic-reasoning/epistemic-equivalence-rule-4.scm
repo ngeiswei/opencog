@@ -33,4 +33,4 @@
         ((sAB (cog-stv-strength (EquivalenceLink (A B)))
         )
          (cAB (cog-stv-confidence (EquivalenceLink (A B) ))))
-            (stv (sAB*0.95)) (cAB))))  
+            (stv (sAB*0.95)) (cAB))) 
