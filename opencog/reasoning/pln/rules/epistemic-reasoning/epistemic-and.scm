@@ -4,7 +4,7 @@
    (VariableList
     (VariableNode "$A")
     (VariableNode "$B"))
-   (AndLink
+   (EAndLink
     (VariableNode "$A")
     (VariableNode "$B"))
    (ExecutionOutputLink
@@ -15,7 +15,7 @@
 
 (define (pln-formula-epistemic-and A B)
   (cog-set-tv!
-   (AndLink A B)
+   (EAndLink A B)
    (pln-formula-epistemic-and-side-effect-free A B))
 )
 
