@@ -18,6 +18,7 @@
 
 (define (pln-formula-epistemic-belief-in-belief-side-effect-free A)
   (let 
-      ((sA (cog-stv-strength A))
+      ( (epsilon = 0.95)
+          (sA (cog-stv-strength A))
           (cA (cog-stv-confidence A))
-    (stv ( 0.95) (cA))))
+    (stv ( epsilon) (cA))))
