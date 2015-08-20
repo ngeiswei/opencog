@@ -1,3 +1,9 @@
+;This is the implementation of the epistemic not rule ENOT ( see page 7 of the document)
+
+; Given beliefs in proposition A, we calculate the belief in not A
+
+; the scaling factor accounts for the increase in confidence 
+
 (define pln-rule-epistemic-not
   (BindLink
    (VariableList
@@ -17,7 +23,9 @@
 
 (define (pln-formula-epistemic-not-side-effect-free A)
   (let 
-      ((sA (cog-stv-strength A))
-       (cA (cog-stv-confidence A))
+      ( (epsilon=0.05)
+        (scaling=1.5)
+        (sA (cog-stv-strength A))
+        (cA (cog-stv-confidence A))
        
-       (stv ( 1-sA ) (cA*0.95))))
+       (stv (epsilon) (cA*scaling))))
