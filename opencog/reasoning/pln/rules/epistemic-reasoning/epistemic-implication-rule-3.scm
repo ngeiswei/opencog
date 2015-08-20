@@ -1,5 +1,5 @@
 
-; Implication rule for simple truth values
+; Implication rule for simple truth values (see Section 2.2, rule 3)
 ;
 ; Given Implication A B , calculate strength of Implication belief A belief B
 ; -----------------------------------------------------------------------------
