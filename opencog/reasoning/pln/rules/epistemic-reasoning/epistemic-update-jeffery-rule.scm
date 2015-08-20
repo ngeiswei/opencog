@@ -27,5 +27,5 @@
       ((sA (cog-stv-strength A))
        (sI (cog-stv-strength Info))
        (cA (cog-stv-confidence A))
-       (cI (cog-stv-confidence Inf)))
+       (cI (cog-stv-confidence Info)))
     (stv ( sI*sA) (min (cA cI)))))
