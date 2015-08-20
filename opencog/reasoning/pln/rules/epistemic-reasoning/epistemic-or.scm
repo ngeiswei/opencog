@@ -1,3 +1,7 @@
+;This is the implementation of the epistemic or rule EOR ( see page 7 of the document)
+
+; Given beliefs in propositions A and B, we calculate the belief in A or B
+
 (define pln-rule-epistemic-or
   (BindLink
    (VariableList
