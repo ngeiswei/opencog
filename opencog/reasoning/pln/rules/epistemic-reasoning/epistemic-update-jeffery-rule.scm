@@ -9,23 +9,23 @@
     (VariableNode "$Inf"))
    (EAndLink
     (VariableNode "$A")
-    (VariableNode "$Inf"))
+    (VariableNode "$Info"))
    (ExecutionOutputLink
     (GroundedSchemaNode "scm: pln-formula-epistemic-update")
     (ListLink
      (VariableNode "$A")
-     (VariableNode "$Inf")))))
+     (VariableNode "$Info")))))
 
-(define (pln-formula-epistemic-and A Inf)
+(define (pln-formula-epistemic-and A Info)
   (cog-set-tv!
    (EAndLink A B)
-   (pln-formula-epistemic-update-side-effect-free A Inf))
+   (pln-formula-epistemic-update-side-effect-free A Info))
 )
 
 (define (pln-formula-epistemic-and-side-effect-free A B)
   (let 
       ((sA (cog-stv-strength A))
-       (sI (cog-stv-strength Inf))
+       (sI (cog-stv-strength Info))
        (cA (cog-stv-confidence A))
        (cI (cog-stv-confidence Inf)))
     (stv ( sI*sA) (min (cA cI)))))
