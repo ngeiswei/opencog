@@ -1,3 +1,6 @@
+;This is the implementation of the epistemic and rule EAND ( see page 7 of the document)
+
+; Given beliefs in propositions A and B, we calculate the belief in A and B
 
 (define pln-rule-epistemic-and
   (BindLink
