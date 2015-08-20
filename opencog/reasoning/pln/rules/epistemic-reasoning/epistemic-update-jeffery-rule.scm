@@ -1,3 +1,6 @@
+; This is the implementation of the revision rule using Jeffery's rule (see Section 2.3 of the document)
+
+; Given a proposition A and Information Inf, agent revises his belief in A according to Jeffery's rule
 
 (define pln-rule-epistemic-update
   (BindLink
@@ -25,4 +28,4 @@
        (sI (cog-stv-strength Inf))
        (cA (cog-stv-confidence A))
        (cI (cog-stv-confidence Inf)))
-    (stv ( sI*sA) (cI))))
+    (stv ( sI*sA) (min (cA cI)))))
