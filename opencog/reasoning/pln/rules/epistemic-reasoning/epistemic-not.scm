@@ -23,9 +23,7 @@
 
 (define (pln-formula-epistemic-not-side-effect-free A)
   (let 
-      ( (epsilon=0.05)
-        (scaling=1.5)
-        (sA (cog-stv-strength A))
+      ( (sA (cog-stv-strength A))
         (cA (cog-stv-confidence A))
        
-       (stv (epsilon) (cA*scaling))))
+       (stv (1-sA) (1-cA))))
