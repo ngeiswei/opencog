@@ -23,7 +23,7 @@
 )
 
 (define (pln-formula-epistemic-lower-belief-side-effect-free A)
-  (let (scale
+  (let (scale = 1.5)
       ((sA (cog-stv-strength A))
           (cA (cog-stv-confidence A))
-    (stv ( sA*0.95) (cA))))
+    (stv ( sA/scale) (cA*scale))))
