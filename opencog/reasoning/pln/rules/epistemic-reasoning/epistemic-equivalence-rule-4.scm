@@ -29,8 +29,9 @@
 
 
 (define (pln-formula-simple-epistemic-equivalence-side-effect-free EquivalenceLink(A B))
-    (let
+    (let 
+        (epsilon=0.05)
         ((sAB (cog-stv-strength (EquivalenceLink (A B)))
         )
          (cAB (cog-stv-confidence (EquivalenceLink (A B) ))))
-            (stv (sAB*0.95)) (cAB))) 
+            (stv (sAB*(1-epsilon))) (cAB))) 
