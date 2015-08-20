@@ -28,16 +28,10 @@
 ; -----------------------------------------------------------------------------
 
 (define (pln-formula-simple-epistemic-implication-side-effect-free AB)
-    (let
-        ((sA (cog-stv-strength (gar AB))
+    (let (epsilon=0.05)
+        ((sAB (cog-stv-strength (EquivalenceLink (A B)))
         )
-         (cA (cog-stv-confidence (gar AB))))
-            (stv                          ; Strength
-                (*
-                    (cog-stv-strength AB)
-                    sA*0.95)
-                (+                        ; Confidence
-                    (cog-stv-confidence AB)
-                    cA))))
+         (cAB (cog-stv-confidence (EquivalenceLink (A B) ))))
+            (stv (sAB*(1-epsilon)) (cAB))) 
 
 ; =============================================================================
