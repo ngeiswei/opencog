@@ -6,7 +6,7 @@
   (BindLink
    (VariableList
     (VariableNode "$A")
-    (VariableNode "$Inf"))
+    (VariableNode "$Info"))
    (EAndLink
     (VariableNode "$A")
     (VariableNode "$Info"))
