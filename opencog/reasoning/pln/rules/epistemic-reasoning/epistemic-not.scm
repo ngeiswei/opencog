@@ -4,6 +4,10 @@
 
 ; the scaling factor accounts for the increase in confidence 
 
+;believe i (A) <s> <c>
+; |-
+; believe i (ENOT A) <(1 − s)> <1 − c>
+
 (define pln-rule-epistemic-not
   (BindLink
    (VariableList
