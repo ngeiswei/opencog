@@ -1,6 +1,10 @@
-; This is the implementation of the complex rule 5 (Page 9 of the document)
+; This is the implementation of the complex rule 5 (Page 9 of the document in the theory folder)
 
 ; Given a BeliefLink A, the agent's belief in his own belief is a very high value 1-\epsilon (\epsilon is a low value)
+
+;believe i A <s> <c 1 > 
+; |- 
+;believe i (believe i A) <1-\epsilon> <c 2 >
 
 (define pln-rule-epistemic-belief-in-belief
   (BindLink
