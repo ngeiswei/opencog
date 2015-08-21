@@ -2,6 +2,10 @@
 ; Equivalence rule for simple truth values (see Section 2.2, rule 4) 
 ;
 ; Given Implication A B , calculate strength of Equivalence belief A belief B
+;  Equivalence (A) (B) <s> <c>
+;  |-
+;  Equivalence (believe i A <t>) (believe i B <t>) <s ∗ (1 − \epsilon )> <c>
+;
 ; -----------------------------------------------------------------------------
 
 (define pln-rule-epistemic-equivalence
