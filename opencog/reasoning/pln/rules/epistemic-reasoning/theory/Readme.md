@@ -9,4 +9,8 @@ The file theory.tex contains latex source code for the theory development of epi
 
 The file reference.bib is a bibliography file with the references. 
 
-To compile run pdflatex theory.tex
+To compile run
+
+  pdflatex theory.tex
+  bibtex reference.bib 
+
