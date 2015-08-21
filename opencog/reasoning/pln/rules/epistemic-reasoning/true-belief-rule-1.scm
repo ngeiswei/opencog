@@ -2,6 +2,12 @@
 
 ; Given a proposition A with a truth value s, the agent's belief in A is s*(1-epsilon)
 
+; (A) <s> <c>
+; |-
+; believe i (A) <s ∗ (1 − )> <c>
+;------------------------------------------------------------------------------------
+
+
 (define pln-rule-epistemic-true-belief
   (BindLink
    (VariableList
