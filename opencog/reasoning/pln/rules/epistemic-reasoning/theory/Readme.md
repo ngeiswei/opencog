@@ -12,5 +12,6 @@ The file reference.bib is a bibliography file with the references.
 To compile run
 
   pdflatex theory.tex
+  
   bibtex reference.bib 
 
