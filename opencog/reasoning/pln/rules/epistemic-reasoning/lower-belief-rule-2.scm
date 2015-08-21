@@ -4,6 +4,13 @@
 
 ; As a result of the lower truth value, the agent's confidence level increases by the scaling factor
 
+; believe i A <s 1 > <c 1 >
+; |-
+; believe i A <s 2 > <c 2 >
+ 
+ ;where, 0 ≤ s 2 ≤ s 1 ≤ 1 and c 2 ≥ c 1 .
+;----------------------------------------------------------
+
 (define pln-rule-epistemic-lower-belief
   (BindLink
    (VariableList
