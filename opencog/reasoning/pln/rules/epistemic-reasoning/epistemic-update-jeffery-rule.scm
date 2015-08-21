@@ -2,6 +2,14 @@
 
 ; Given a proposition A and Information Inf, agent revises his belief in A according to Jeffery's rule
 
+; believe i A <s> <c 1 >
+; |- 
+; Inf <t> <c 2 >
+;|- believe i A <u> <min(c 1 , c 2 )>
+
+;where, u = t ∗ s.
+;-------------------------------------------------------
+
 (define pln-rule-epistemic-update
   (BindLink
    (VariableList
