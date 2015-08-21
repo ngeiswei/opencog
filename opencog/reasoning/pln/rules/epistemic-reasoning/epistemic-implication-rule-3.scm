@@ -2,6 +2,10 @@
 ; Implication rule for simple truth values (see Section 2.2, rule 3)
 ;
 ; Given Implication A B , calculate strength of Implication belief A belief B
+
+; Implication (A) (B) <s> <c>
+; |-
+; Implication (believe i A <t>) (believe i B <t>) <s ∗ (1 − \epsilon )> <c>
 ; -----------------------------------------------------------------------------
 
 (define pln-rule-epistemic-implication
