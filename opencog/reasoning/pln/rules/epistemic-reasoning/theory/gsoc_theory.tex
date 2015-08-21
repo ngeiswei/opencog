@@ -369,12 +369,19 @@ Suppose an agent $i$ believes a term \texttt{A} with a truth value of at least $
 \item
 \noindent The inference rule for the epistemic negation \texttt{ENOT} is:  
 
-\noindent \texttt{believe$_i$ (A) <$s*(1-\epsilon)$> <$c_1$>} \\
+\noindent \texttt{believe$_i$ (A) <$s$> <$c$>} \\
  $\vdash$
-\texttt{believe$_i$ (ENOT A) <$\epsilon$> <$c_2$>} \\
+\texttt{believe$_i$ (ENOT A) <$(1-s)$> <$1-c$>} \\
 
-\noindent where, $\epsilon>0$ is small positive constant and $c_2 >c_1$ . Intuitively, it means that if an agent believes a term with a truth value of at least $s*(1-\epsilon)$, then he believes the negation of that term with a truth value of at least $\epsilon$. Since the truth value interval of the inference increases, the confidence of the agent in that truth value also increases from $c_1$ to $c_2$. 
+\noindent Intuitively, it means that if an agent believes a term with a truth value of at least $s$, then he believes the negation of that term with a truth value of at least $(1-s)$. Since the truth value interval of the inference changes, the confidence of the agent in that truth value also changes from $c$ to $1-c$. 
 
+\begin{remark}{\em 
+We should note that the need to change the confidence of the strength value in the negation of the proposition arises due to the semantics of the belief predicate. Since \texttt{believe$_i$ (A) <$s$> <$c$>} means that an agent believes in \texttt{(A)} with a truth value of at least $s$ and confidence $c$, for the negation of \texttt{A} we need to change the confidence level.
+
+The above point also justifies that for negation rule, it is better to use indefinite probabilities rather than simple truth values.}
+
+
+\end{remark}
 \item  \noindent The inference rule for the epistemic conjunction \texttt{EAND} is: 
 
 \noindent \texttt{believe$_i$ (A) <$s_1$> <$c_1$>}\\
@@ -425,7 +432,7 @@ where, $\epsilon$ is a small positive constant tending to 0. The above inference
 $\vdash$
 \texttt{believe$_i$ A <$s_2$> <$c_2$>}
 
-where, $0\leq s_2\leq s_1\leq 1$ and $c_2>c_1$. The above inference rule means that if an agent believes a term \texttt{A} with a truth value $s_1$, then he also believes the same term \texttt{A} with any lower truth value $s_2\leq s_1$. An important remark is that the confidence value of the agent's belief in a lower truth value increases because the interval of the belief now increases to $[s_1,1]$ to $[s_2,1]$  
+where, $0\leq s_2\leq s_1\leq 1$ and $c_2\geq c_1$. The above inference rule means that if an agent believes a term \texttt{A} with a truth value $s_1$, then he also believes the same term \texttt{A} with any lower truth value $s_2\leq s_1$. An important remark is that the confidence value of the agent's belief in a lower truth value increases because the interval of the belief now increases to $[s_1,1]$ to $[s_2,1]$  
 \item
 \texttt{Implication (A) (B) <$s$> <$c$>}\\
 $\vdash$
@@ -491,12 +498,12 @@ where, $c_2 < c_1$. The above inference rule means that if an agent believes a t
 
 \paragraph{Inference rule for belief revision.} We adapt the Jeffery's rule \cite{Jeffrey1983} to the context of PLN truth values as follows.\\
 
-\noindent \texttt{believe$_i$ A <$s$>}\\
-\noindent \texttt{Inf <$t$>}\\
+\noindent \texttt{believe$_i$ A <$s$> <$c_1$>}\\
+\noindent \texttt{Inf <$t$> <$c_2$>}\\
 $\vdash$
-\noindent \texttt{believe$_i$ A <$u$>}\\
+\noindent \texttt{believe$_i$ A <$u$> <$\mathsf{min} (c_1,c_2)$>}\\
 
-where, $u=t*(a_1 Pr(A|B_1) + \ldots + Pr(A|B_n))$. Intuitively, this rule states that of the agent believes in a proposition \texttt{A} with a truth value of $s$, and he receives information \texttt{Inf} which has a truth value of $t$, he will update or revise his belief in \texttt{A} according to the Jeffery's rule as mentioned above. 
+where, $u=t*(a_1 Pr(A|B_1) + \ldots + Pr(A|B_n))$. Intuitively, this rule states that if the agent believes in a proposition \texttt{A} with a truth value of $s$, and he receives information \texttt{Inf} which has a truth value of $t$, he will update or revise his belief in \texttt{A} according to the Jeffery's rule as mentioned above. 
 
 \begin{example}{\em We illustrate the above inference rule by means of an example. Consider one of the earlier examples where the agent is not sure whether the coin is biased or not. Recall that his belief that the outcome is a head is equal to $1/2*9/10 + 2/3*1/10$, since he believed that the probability of the coin being biased is $1/10$.
 
@@ -585,8 +592,8 @@ where \texttt{Implication} is the PLN implication relation. The above inference 
 
 
 \item
-\texttt{Implication} (A) (B) $[L_1,U_1]$ <$b$>\\
-\texttt{Implication} (B) (A) $[L_2,U_2]$ <$b$>\\
+\texttt{Implication (A) (B) $[L_1,U_1]$ <$b$>}\\
+\texttt{Implication (B) (A) $[L_2,U_2]$ <$b$>}\\
 $\vdash$
 \texttt{Equivalence (believe$_i$ (A) $[L,U]$ <$b$>)}\texttt{(believe$_i$ (B) $[L,U]$ <$b$>) $[L_3,U_3]$ <$b$>}
 
@@ -669,63 +676,5 @@ We end this report with some open problems and directions of research that can b
 \bibliographystyle{abbrv}
 \bibliography{reference}
 
-%In order to update the beliefs we could follow the update rules in the following paper:
-
-%H. Chan and A. Darwiche. On the revision of probabilistic beliefs using uncertain evidence
-% - \emph{Artificial Intelligence}, 2005 - Elsevier
-
-\begin{comment}
-
-{\bf Part II: Extending modal reasoning to indefinite probabilities } The truth value in the present PLN framework is given by \emph{simple truth values}.  A simple truth value is a tuple $<s,w>$ where $s$ is the strength value or the probability of the relationship, and $w$ is the confidence value, which denotes the certainty of the probability $s$. \\
-For example, the relationship
-\begin{verbatim}
-Subset A B <0.8, 0.9>
-\end{verbatim}
-means that the $B$ is a subset of $A$ with a probability of 0.8, with a high degree of uncertainty 0.9.
-
-
-
-
-An alternative approach to quantify uncertainties in PLN is by using \emph{indefinite probabilities}. An indefinite probability is quadruple $<[L,U],b,k>$, where $[L,U]$ is the probability interval,  $b$ is the  credibility level, and the lookahead parameter $k$. The intuitive semantics of the indefinite probability is that after $k$ more observations the conclusion of the inference will be in the interval $[L,U]$ with a probability $b$. 
-
-The second implementation goal of the project would be to apply the indefinite probabilities in the context of PLN modal logic reasoning. Once we have the truth values and the rules for modal logic inference, the steps involved in this process are as follows.
-\begin{enumerate}
-\item
-Let $[L_i, U_i]$ be the interval premise probabilities. In order to compute indefinite probabilities of the conclusion, we find a distribution $[L1_i,U1_i]\supset [L_i,U_i]$ such that these have $[L_i,U_i]$ as $(100.b_i)\%$ credible intervals.
-\item
-In the second step, for each premise $n_1$ values are randomly selected from the distribution found in the first step. These $n_1$ values provide the values for the means for our first-order distributions. For each of our $n_1$ first-order distributions, $n_2$ values are selected to represent the first-order distribution. The applicable inference rule are applied  to each of the $n_2$ values for each first-order distribution to generate the final distribution of first-order distributions of probabilities.
-\item
- Finally, We calculate the mean of each distribution and then find a $(100.b\%)$ credible interval, $[L_f,U_f]$, for this distribution of means.
-
-\end{enumerate}
-
-\vspace{5mm}
-
-\item
-{\bf Timeline }\\
-The project is in two parts, and the first part needs more theory development than the second. Once the implementation of modal logic inference rules and truth values imprecise probabilities has reached a near-final stage, I will start with the implementation of the imprecise probabilities in context of modal reasoning. A more detailed time line is presented below.\\
-
-\emph{Week 1.} Get familiar and comfortable with the new RuleEngine implementation in OpenCog including the software aspects such as forward and backward chaining.
-
-\emph{Weeks 2 and 3.} Work out the theoretical  inference rules and truth values for modal logic project.
-
-\emph{Weeks 4, 5 and 6.} Implement the modal inference rules and simple truth values to RuleEngine developed in Weeks 2 and 3. 
-
-\emph{Week 7.} Testing of the implemented inference rules and writing up relevant documentation. 
-
-\emph{Weeks 8, 9 and 10.} Implementing the modal logic inference rules and truth values imprecise probabilities. 
-
-\emph{Week 11.} Testing out the implementation of the imprecise probabilities in the context of modal logic , writing documentation. 
-
-\emph{Week 12.} Writing the final documentation, final touches to the source code, merging the code with the main PLN source.
-
-\end{comment}
 
 \end{document}
-\item
-\texttt{believe$_i$ A $[L_1,U_1]$ <$b$>}\\
-$\vdash$
-\texttt{believe$_i$  (believe$_i$ A) $[1,1]$ <$b$>}
-
-The above inference rule means that if an agent believes a term \texttt{A} with a truth value \texttt{<s>}, then he his belief about his belief about the proposition \texttt{A} has a truth value of 1. In other words, an agent trusts his own belief.
-
