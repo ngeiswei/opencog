@@ -2,6 +2,12 @@
 
 ; Given beliefs in propositions A and B, we calculate the belief in A and B
 
+; believe_i (A) <s 1 > <c 1 >
+; believe i (B) <s 2 > <c 2 >
+; |- 
+; believe i (A EAND B) <t> <c>
+; where, t = max(s 1 + s 2 − 1, 0), and c = min(c 1 , c 2 ).
+
 (define pln-rule-epistemic-and
   (BindLink
    (VariableList
