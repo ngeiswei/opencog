@@ -1,5 +1,9 @@
 
 
+------------------------------------------------
+Extending PLN to Auto-Epistemic Reasoning
+------------------------------------------------
+
 
 The file theory.tex contains latex source code for the theory development of epistemic reasoning for the PLN framewrok as a part of Google Summer of Code 2015.
 
