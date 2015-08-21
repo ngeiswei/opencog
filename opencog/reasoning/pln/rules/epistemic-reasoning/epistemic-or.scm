@@ -2,6 +2,13 @@
 
 ; Given beliefs in propositions A and B, we calculate the belief in A or B
 
+; believe_i (A) <s 1 > <c 1 >
+; believe i (B) <s 2 > <c 2 >
+; |- 
+; believe i (A OR B) <t> <c>
+
+; where t = min(s + t, 1), and c = min(c 1 , c 2 ).
+
 (define pln-rule-epistemic-or
   (BindLink
    (VariableList
